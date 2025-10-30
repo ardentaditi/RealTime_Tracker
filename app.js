@@ -18,6 +18,10 @@ io.on("connection", function(socket) {
         latitude,
         longitude
     });
+        socket.io("disconnet",function(){
+            io.emit("user-disconnected",socket.id)
+        })
+
 });
     console.log("A user connected:", socket.id);
 
